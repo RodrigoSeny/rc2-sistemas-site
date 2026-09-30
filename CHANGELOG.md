@@ -5,6 +5,12 @@ e [Versionamento Semântico](https://semver.org/lang/pt-BR/).
 
 ## [Não lançado]
 
+## [1.2.1] - 2026-09-30
+
+### Corrigido
+- Relatório de estatísticas não abria (CSP bloqueava o `new Function` dos
+  templates do GoAccess): `unsafe-eval` liberado só em `/estatisticas/`.
+
 ## [1.2.0] - 2026-09-30
 
 ### Alterado
