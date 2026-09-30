@@ -1,6 +1,6 @@
 # Roteiro — cada sistema com seu próprio usuário Linux
 
-> **Estado (2026-09-30):** `cem` ✅ e `cicle` ✅ migrados; `superpet` pendente.
+> **Estado (2026-09-30):** os três migrados — `cem` ✅, `cicle` ✅, `superpet` ✅. Nenhum sistema roda mais como root.
 >
 > **Abordagem usada (mais segura que a descrita abaixo):** o código continua com
 > dono `root` (o sistema só lê — não consegue alterar o próprio código); o
