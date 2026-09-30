@@ -5,6 +5,13 @@ e [Versionamento Semântico](https://semver.org/lang/pt-BR/).
 
 ## [Não lançado]
 
+## [1.2.2] - 2026-09-30
+
+### Corrigido
+- Scripts gravados como executáveis no git (modo 755): o `chmod` feito na
+  VPS era visto como alteração local e travava o `git pull`.
+- `atualizar.sh` recarrega o Nginx (as configs incluem arquivos do repositório).
+
 ## [1.2.1] - 2026-09-30
 
 ### Corrigido
