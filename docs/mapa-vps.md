@@ -8,8 +8,8 @@ VPS Hostinger `srv1797736` — IP `187.127.43.130` — Ubuntu, Nginx 1.24, PM2.
 |---|---|---|---|---|
 | `rc2sistemas.cloud`, `www` | Site institucional RC2 Sistemas | **Estático (Nginx)**; demais caminhos repassados ao SuperPet | `rc2-sistemas-site` | `rc2site` |
 | `app` | SuperPet (rações / petshop) | PM2 `superpet`, porta 3001 | `RCSystem-Racoes` | `superpet` |
-| `cicle` | CicleSystem (bicicletarias) | PM2 `ciclesystem`, porta 3000 | `ciclesystem` | `ciclesystem` |
-| `cem` | CEM | PM2 `cem`, porta 3300 | `cem` | `cem` |
+| `cicle` | CicleSystem (bicicletarias) | PM2 `ciclesystem`, porta 3000, banco PostgreSQL local | `ciclesystem` | `ciclesystem` |
+| `cem` | CEM | PM2 `cem`, porta 3300, usuário `cem` ✅ | `cem` | `cem` |
 | `fiscal` | Comparador Fiscal | Estático (Nginx), /var/www/comparador-fiscal | — | `comparador-fiscal` |
 | `contabil` | Site RC2 Contábil + Calculadora do Simples | **Estático (Nginx)** | `rc2-contabil-site` | `rc2-contabil` |
 
