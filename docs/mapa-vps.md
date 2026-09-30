@@ -8,9 +8,9 @@ VPS Hostinger `srv1797736` — IP `187.127.43.130` — Ubuntu, Nginx 1.24, PM2.
 |---|---|---|---|---|
 | `rc2sistemas.cloud`, `www` | Site institucional RC2 Sistemas | **Estático (Nginx)**; demais caminhos repassados ao SuperPet | `rc2-sistemas-site` | `rc2site` |
 | `app` | SuperPet (rações / petshop) | PM2 `superpet`, porta 3001 | `RCSystem-Racoes` | `superpet` |
-| `cicle` | CicleSystem (bicicletarias) | PM2 `ciclesystem` | `ciclesystem` | `ciclesystem` |
-| `cem` | CEM | PM2 `cem` | `cem` | `cem` |
-| `fiscal` | Comparador Fiscal | — | — | `comparador-fiscal` |
+| `cicle` | CicleSystem (bicicletarias) | PM2 `ciclesystem`, porta 3000 | `ciclesystem` | `ciclesystem` |
+| `cem` | CEM | PM2 `cem`, porta 3300 | `cem` | `cem` |
+| `fiscal` | Comparador Fiscal | Estático (Nginx), /var/www/comparador-fiscal | — | `comparador-fiscal` |
 | `contabil` | Site RC2 Contábil + Calculadora do Simples | **Estático (Nginx)** | `rc2-contabil-site` | `rc2-contabil` |
 
 ## Regras da divisão
@@ -24,6 +24,17 @@ VPS Hostinger `srv1797736` — IP `187.127.43.130` — Ubuntu, Nginx 1.24, PM2.
 5. **Estatística sem rastreador:** logs de acesso com IP anonimizado em
    `/var/log/nginx-rc2/`, relatório GoAccess protegido por senha em
    `https://rc2sistemas.cloud/estatisticas/`.
+
+## Backups
+
+| Sistema | Como | Quando |
+|---|---|---|
+| SuperPet | `deploy/backup/backup-superpet.sh` (sqlite3 `.backup`, principal + tenants) → `/var/backups/superpet`, 30 dias | 03:30 (`/etc/cron.d/rc2-backups`) |
+| CicleSystem | `/root/backup-ciclesystem.sh` | 03:00 (crontab do root) |
+| CEM | `/var/www/cem/backup.sh` | 02:00 (crontab do root) |
+
+> Todos os backups ficam no mesmo disco da VPS. Recomendado: cópia fora da VPS
+> (snapshot semanal da Hostinger e/ou envio para nuvem).
 
 ## Atualizar cada coisa
 

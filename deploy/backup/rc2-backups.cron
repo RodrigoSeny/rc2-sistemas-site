@@ -1,0 +1,3 @@
+# Instalar em /etc/cron.d/rc2-backups (dono root, permissão 644).
+# Backup diário do SuperPet às 03:30 (depois dos backups do CEM e CicleSystem).
+30 3 * * * root /var/www/rc2-sistemas-site/deploy/backup/backup-superpet.sh >> /var/log/backup-superpet.log 2>&1
