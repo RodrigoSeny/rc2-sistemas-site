@@ -5,6 +5,14 @@ e [Versionamento Semântico](https://semver.org/lang/pt-BR/).
 
 ## [Não lançado]
 
+## [1.2.0] - 2026-09-30
+
+### Alterado
+- `backup-superpet.sh` devolve ao dono do banco os arquivos auxiliares do
+  SQLite (-wal/-shm/-journal) criados pelo backup como root.
+- Documentação: firewall ativo (22/80/443), CEM e CicleSystem com usuário
+  próprio, abordagem "código root, escrita só em dados".
+
 ## [1.1.1] - 2026-09-30
 
 ### Alterado

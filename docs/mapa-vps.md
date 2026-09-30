@@ -8,7 +8,7 @@ VPS Hostinger `srv1797736` — IP `187.127.43.130` — Ubuntu, Nginx 1.24, PM2.
 |---|---|---|---|---|
 | `rc2sistemas.cloud`, `www` | Site institucional RC2 Sistemas | **Estático (Nginx)**; demais caminhos repassados ao SuperPet | `rc2-sistemas-site` | `rc2site` |
 | `app` | SuperPet (rações / petshop) | PM2 `superpet`, porta 3001 | `RCSystem-Racoes` | `superpet` |
-| `cicle` | CicleSystem (bicicletarias) | PM2 `ciclesystem`, porta 3000, banco PostgreSQL local | `ciclesystem` | `ciclesystem` |
+| `cicle` | CicleSystem (bicicletarias) | PM2 `ciclesystem`, porta 3000, banco PostgreSQL local (só 127.0.0.1), usuário `cicle` ✅ | `ciclesystem` | `ciclesystem` |
 | `cem` | CEM | PM2 `cem`, porta 3300, usuário `cem` ✅ | `cem` | `cem` |
 | `fiscal` | Comparador Fiscal | Estático (Nginx), /var/www/comparador-fiscal | — | `comparador-fiscal` |
 | `contabil` | Site RC2 Contábil + Calculadora do Simples | **Estático (Nginx)** | `rc2-contabil-site` | `rc2-contabil` |
@@ -19,8 +19,11 @@ VPS Hostinger `srv1797736` — IP `187.127.43.130` — Ubuntu, Nginx 1.24, PM2.
    estáticas e servidas direto pelo Nginx: não caem quando um sistema reinicia
    e não expõem código de sistema.
 2. **Um subdomínio, um repositório, uma pasta, um processo** por sistema.
-3. **Portas dos sistemas só internas** (127.0.0.1); acesso externo só via Nginx com HTTPS.
-4. **Cada sistema com seu usuário Linux** (em andamento — hoje o PM2 roda como root).
+3. **Firewall (ufw) ativo** desde 2026-09-30: entrada liberada só em 22 (SSH), 80 e 443.
+   Portas dos sistemas (3000, 3001, 3300) bloqueadas para fora; acesso só via Nginx com HTTPS.
+4. **Cada sistema com seu usuário Linux**, sem senha e sem login: `cem` ✅, `cicle` ✅,
+   `superpet` (pendente). O código fica com dono root (só leitura para o sistema);
+   o usuário do sistema só escreve nas pastas de dados, uploads e logs.
 5. **Estatística sem rastreador:** logs de acesso com IP anonimizado em
    `/var/log/nginx-rc2/`, relatório GoAccess protegido por senha em
    `https://rc2sistemas.cloud/estatisticas/`.

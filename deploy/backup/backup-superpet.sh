@@ -34,6 +34,13 @@ for db in "${bancos[@]}"; do
   fi
   gzip -f "$DEST/$nome.db"
   total=$((total + 1))
+  # Este script roda como root. Se o SuperPet roda com usuário próprio, os
+  # arquivos auxiliares do SQLite (-wal/-shm/-journal) que o root venha a criar
+  # precisam voltar para o dono do banco — senão o sistema perde a escrita.
+  dono=$(stat -c %U:%G "$db")
+  for aux in "$db-wal" "$db-shm" "$db-journal"; do
+    [ -e "$aux" ] && chown "$dono" "$aux"
+  done
 done
 
 # Remove backups mais antigos que a retenção.

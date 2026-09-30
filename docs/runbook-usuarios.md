@@ -1,5 +1,18 @@
 # Roteiro — cada sistema com seu próprio usuário Linux
 
+> **Estado (2026-09-30):** `cem` ✅ e `cicle` ✅ migrados; `superpet` pendente.
+>
+> **Abordagem usada (mais segura que a descrita abaixo):** o código continua com
+> dono `root` (o sistema só lê — não consegue alterar o próprio código); o
+> usuário do sistema recebe escrita **só** nas pastas que grava; `.env` fica
+> `root:<usuario>` 640. Assim `git pull`/`update.sh` como root seguem iguais.
+>
+> | Sistema | Pastas com escrita | Observações |
+> |---|---|---|
+> | cem | `dados/`, `uploads/`, `/var/log/cem` | ecosystem.config.js + `--uid cem --gid cem` |
+> | ciclesystem | `dados/`, `imagens/`, `/var/log/ciclesystem` | sem ecosystem; `node_modules` precisou de `chmod -R go+rX`; logs saíram de /root/.pm2/logs |
+> | superpet | `data/`, `dados/`, `imagens/`, `backups/`, `/var/log/superpet` | ecosystem.config.js |
+
 **Hoje:** os três sistemas (superpet, ciclesystem, cem) rodam como `root` no
 PM2 (`pm2-root.service`). Uma falha de segurança em qualquer um deles dá
 controle total da VPS e acesso aos dados dos outros.
