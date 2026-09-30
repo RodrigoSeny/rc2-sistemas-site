@@ -1,0 +1,3 @@
+# Instalar em /etc/cron.d/rc2-estatisticas (dono root, permissão 644).
+# Regera os relatórios de visitas a cada hora, no minuto 17.
+17 * * * * root /var/www/rc2-sistemas-site/deploy/estatisticas/gerar.sh >/dev/null 2>&1

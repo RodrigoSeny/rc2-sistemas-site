@@ -1,0 +1,8 @@
+* text=auto
+*.sh text eol=lf
+*.conf text eol=lf
+*.cron text eol=lf
+*.logrotate text eol=lf
+*.png binary
+*.jpg binary
+*.ico binary
