@@ -33,8 +33,9 @@ VPS Hostinger `srv1797736` — IP `187.127.43.130` — Ubuntu, Nginx 1.24, PM2.
 | CicleSystem | `/root/backup-ciclesystem.sh` | 03:00 (crontab do root) |
 | CEM | `/var/www/cem/backup.sh` | 02:00 (crontab do root) |
 
-**Fora da VPS:** 04:15, cópia criptografada no Google Drive (90 dias) —
-ver [`backup-nuvem.md`](backup-nuvem.md).
+**Fora da VPS:** backup automático da Hostinger (hPanel → VPS → Backups), que copia
+o servidor inteiro — inclusive `/var/backups/superpet` com os 30 dias de backups
+diários. Antes de mudanças arriscadas, tirar um **snapshot** manual no hPanel.
 
 ## Atualizar cada coisa
 

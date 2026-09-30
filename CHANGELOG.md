@@ -5,6 +5,12 @@ e [Versionamento Semântico](https://semver.org/lang/pt-BR/).
 
 ## [Não lançado]
 
+## [1.1.1] - 2026-09-30
+
+### Alterado
+- Envio ao Google Drive desativado no cron: a cópia fora da VPS passa a ser o
+  backup automático da Hostinger. Script e guia mantidos para uso futuro.
+
 ## [1.1.0] - 2026-09-30
 
 ### Adicionado

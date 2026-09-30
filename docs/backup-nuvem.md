@@ -1,5 +1,12 @@
 # Backup fora da VPS — Google Drive (criptografado)
 
+> **DESATIVADO (2026-09-30).** Optou-se pelo backup automático da Hostinger.
+> Este envio fica pronto para ser ativado depois. Para ativar: criar um
+> client_id próprio no Google Cloud (o client_id compartilhado do rclone deixa
+> de funcionar em 2026), configurar os remotes `gdrive` e `gdrive-cripto` e
+> acrescentar ao `/etc/cron.d/rc2-backups`:
+> `15 4 * * * root /var/www/rc2-sistemas-site/deploy/backup/enviar-nuvem.sh >> /var/log/backup-nuvem.log 2>&1`
+
 Os backups locais (`/var/backups/superpet`, CEM, CicleSystem) ficam no mesmo
 disco da VPS. Todo dia às 04:15, `deploy/backup/enviar-nuvem.sh` envia uma
 cópia **criptografada** para o Google Drive.
