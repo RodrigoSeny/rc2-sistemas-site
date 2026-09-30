@@ -1,0 +1,5 @@
+# Copiar para /etc/rc2-backups-nuvem.list (dono root, permissão 600).
+# Uma pasta de backup por linha: nome=caminho. Linhas com # são ignoradas.
+superpet=/var/backups/superpet
+# cem=/caminho/dos/backups/do/cem
+# ciclesystem=/caminho/dos/backups/do/ciclesystem

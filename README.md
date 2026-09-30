@@ -26,6 +26,8 @@ deploy/
 │   └── estatisticas-headers.conf
 ├── backup/
 │   ├── backup-superpet.sh   ← backup diário dos bancos do SuperPet
+│   ├── enviar-nuvem.sh      ← envia os backups ao Google Drive, criptografados
+│   ├── rc2-backups-nuvem.list.exemplo
 │   └── rc2-backups.cron
 └── estatisticas/
     ├── gerar.sh             ← relatórios GoAccess (RC2 Sistemas e RC2 Contábil)
@@ -33,6 +35,7 @@ deploy/
     └── nginx-rc2.logrotate  ← retenção de ~13 meses dos logs anônimos
 docs/
 ├── mapa-vps.md
+├── backup-nuvem.md          ← Google Drive: como funciona e como restaurar
 └── runbook-usuarios.md      ← roteiro: cada sistema com seu usuário Linux
 ```
 

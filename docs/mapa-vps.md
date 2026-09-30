@@ -33,8 +33,8 @@ VPS Hostinger `srv1797736` — IP `187.127.43.130` — Ubuntu, Nginx 1.24, PM2.
 | CicleSystem | `/root/backup-ciclesystem.sh` | 03:00 (crontab do root) |
 | CEM | `/var/www/cem/backup.sh` | 02:00 (crontab do root) |
 
-> Todos os backups ficam no mesmo disco da VPS. Recomendado: cópia fora da VPS
-> (snapshot semanal da Hostinger e/ou envio para nuvem).
+**Fora da VPS:** 04:15, cópia criptografada no Google Drive (90 dias) —
+ver [`backup-nuvem.md`](backup-nuvem.md).
 
 ## Atualizar cada coisa
 

@@ -1,3 +1,5 @@
 # Instalar em /etc/cron.d/rc2-backups (dono root, permissão 644).
-# Backup diário do SuperPet às 03:30 (depois dos backups do CEM e CicleSystem).
+# 03:30 — backup diário do SuperPet (depois dos backups do CEM 02:00 e CicleSystem 03:00).
 30 3 * * * root /var/www/rc2-sistemas-site/deploy/backup/backup-superpet.sh >> /var/log/backup-superpet.log 2>&1
+# 04:15 — envia todos os backups para o Google Drive, criptografados.
+15 4 * * * root /var/www/rc2-sistemas-site/deploy/backup/enviar-nuvem.sh >> /var/log/backup-nuvem.log 2>&1

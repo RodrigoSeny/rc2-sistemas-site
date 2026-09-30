@@ -5,6 +5,13 @@ e [Versionamento Semântico](https://semver.org/lang/pt-BR/).
 
 ## [Não lançado]
 
+## [1.1.0] - 2026-09-30
+
+### Adicionado
+- Backup fora da VPS: `enviar-nuvem.sh` envia os backups ao Google Drive
+  com rclone crypt (conteúdo e nomes cifrados, escopo `drive.file`), retenção
+  de 90 dias, às 04:15. Guia em `docs/backup-nuvem.md`.
+
 ## [1.0.0] - 2026-09-30
 
 ### Adicionado
