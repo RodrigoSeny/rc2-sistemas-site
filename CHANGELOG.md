@@ -5,6 +5,17 @@ e [Versionamento Semântico](https://semver.org/lang/pt-BR/).
 
 ## [Não lançado]
 
+## [1.3.0] - 2026-10-04
+
+### Alterado
+- Seção "Soluções" reorganizada em grupos (Gestão do negócio, Finanças pessoais,
+  Contábil e fiscal). Cada sistema mostra situação (em operação, em
+  desenvolvimento, gratuito, acesso restrito), descrição, funcionalidades
+  principais e o endereço de acesso: SuperPet, CicleSystem, Gestão escolar
+  (sistema e app dos pais), Finanças, Calculadora do Simples, Comparador fiscal
+  e Controle Contábil. Novos cards: RC2Pet (em breve), Finanças e Controle Contábil.
+- Botão "Acessar sistemas" no topo (no lugar da "Área do cliente" desativada).
+
 ## [1.2.2] - 2026-09-30
 
 ### Corrigido

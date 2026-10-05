@@ -4,9 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="theme-color" content="#0f2740">
-  <meta name="description" content="RC2 Sistemas — sistemas de gestão para petshops, bicicletarias, escolas e comércio em geral. PDV, estoque, financeiro, fiscal, ERP escolar e catálogo online.">
+  <meta name="description" content="RC2 Sistemas — sistemas de gestão para petshops, bicicletarias, escolas e comércio em geral. PDV, estoque, financeiro, fiscal, ERP escolar, finanças pessoais, catálogo online e ferramentas contábeis.">
   <title>RC2 Sistemas — Sistemas de gestão para o seu negócio</title>
-  <link rel="stylesheet" href="/site/css/site.css?v=1">
+  <link rel="stylesheet" href="/site/css/site.css?v=2">
 </head>
 <body>
 
@@ -27,9 +27,7 @@
         <a href="#recursos">Recursos</a>
         <a href="https://contabil.rc2sistemas.cloud/calculadora-simples/">Calculadora do Simples</a>
         <a class="destaque" href="#contato">Contato</a>
-        <!-- Área do cliente desativada por enquanto. Para reativar, descomente:
-        <a class="btn-cliente" href="https://app.rc2sistemas.cloud/login">Área do cliente</a>
-        -->
+        <a class="btn-cliente" href="#solucoes">Acessar sistemas</a>
       </nav>
     </div>
   </header>
@@ -53,78 +51,159 @@
     <div class="wrap">
       <div class="sec-tit">
         <div class="et">Soluções</div>
-        <h2>Sistemas em operação hoje</h2>
-        <p>Cada um nasceu dentro de um negócio real e continua evoluindo com quem usa todo dia.</p>
+        <h2>Nossos sistemas e onde acessar</h2>
+        <p>Cada um nasceu dentro de um negócio real e continua evoluindo com quem usa todo dia. Clique no endereço para entrar.</p>
       </div>
-      <div class="grid">
-        <div class="card">
-          <div class="ic">🐾</div>
-          <span class="tag">Petshops e casas de ração</span>
-          <h3>SuperPet</h3>
-          <p>Gestão completa para quem vive de ração, petisco e serviço de banho e tosa.</p>
-          <ul>
-            <li>PDV com balança, código de barras e sangria de caixa</li>
-            <li>Estoque, validade por lote e fragmentação a granel</li>
-            <li>Financeiro, comissões e dashboards de venda</li>
-            <li>Banho &amp; Tosa com agenda e NFC-e</li>
-          </ul>
+
+      <!-- Cada grupo reúne sistemas do mesmo tipo. Card = situação, endereço de
+           acesso, descrição curta e funcionalidades principais.
+           Endereços conferidos com docs/mapa-vps.md. -->
+      <div class="grupo">
+        <h3 class="grupo-tit"><span>🏪</span> Gestão do negócio</h3>
+        <div class="grid">
+          <div class="card">
+            <div class="card-topo"><div class="ic">🐾</div><span class="status ok">Em operação</span></div>
+            <span class="tag">Petshops e casas de ração</span>
+            <h3>SuperPet</h3>
+            <p>Gestão completa para quem vive de ração, petisco e serviço de banho e tosa.</p>
+            <ul>
+              <li>PDV com balança, código de barras e sangria de caixa</li>
+              <li>Estoque, validade por lote e fragmentação a granel</li>
+              <li>Financeiro, comissões e dashboards de venda</li>
+              <li>Banho &amp; Tosa com agenda e NFC-e</li>
+            </ul>
+            <a class="acesso" href="https://app.rc2sistemas.cloud/login">
+              <span class="url">app.rc2sistemas.cloud</span><span class="ir">Entrar →</span>
+            </a>
+          </div>
+          <div class="card">
+            <div class="card-topo"><div class="ic">🛒</div><span class="status ok">Em operação</span></div>
+            <span class="tag">Loja virtual · incluso no SuperPet</span>
+            <h3>Catálogo online</h3>
+            <p>Sua vitrine na internet ligada ao estoque do sistema, com pedido pelo WhatsApp.</p>
+            <ul>
+              <li>Produtos, preços e fotos sempre atualizados</li>
+              <li>Carrinho, endereço por CEP e formas de pagamento</li>
+              <li>Destaques da semana montados por você</li>
+            </ul>
+            <p class="obs">Cada loja recebe o endereço do próprio catálogo na implantação.</p>
+          </div>
+          <div class="card">
+            <div class="card-topo"><div class="ic">🚲</div><span class="status ok">Em operação</span></div>
+            <span class="tag">Bicicletarias</span>
+            <h3>CicleSystem</h3>
+            <p>Feito para oficina: da entrada da bike ao fechamento da ordem de serviço.</p>
+            <ul>
+              <li>Ordens de serviço com peças e mão de obra</li>
+              <li>PDV, controle de peças, fornecedores e garantia</li>
+              <li>Vendas, caixa e contas a pagar e receber</li>
+              <li>Avisos por e-mail de boletos e estoque baixo</li>
+            </ul>
+            <a class="acesso" href="https://cicle.rc2sistemas.cloud/">
+              <span class="url">cicle.rc2sistemas.cloud</span><span class="ir">Entrar →</span>
+            </a>
+          </div>
+          <div class="card">
+            <div class="card-topo"><div class="ic">🎓</div><span class="status ok">Em operação</span></div>
+            <span class="tag">Escolas e centros educacionais</span>
+            <h3>Gestão escolar</h3>
+            <p>ERP para a secretaria: da matrícula ao fechamento financeiro do mês, num fluxo só.</p>
+            <ul>
+              <li>Alunos, responsáveis, turmas e funcionários</li>
+              <li>Ocorrências e comunicados para o app dos pais</li>
+              <li>Mensalidades, contratos e cobranças com baixa em lote</li>
+              <li>Relatórios e prestação de contas com o timbre da escola</li>
+            </ul>
+            <a class="acesso" href="https://cem.rc2sistemas.cloud/">
+              <span class="url">cem.rc2sistemas.cloud</span><span class="ir">Sistema →</span>
+            </a>
+            <a class="acesso" href="https://cem.rc2sistemas.cloud/app">
+              <span class="url">cem.rc2sistemas.cloud/app</span><span class="ir">App dos pais →</span>
+            </a>
+          </div>
+          <div class="card">
+            <div class="card-topo"><div class="ic">🐶</div><span class="status breve">Em desenvolvimento</span></div>
+            <span class="tag">Petshops · nova geração do SuperPet</span>
+            <h3>RC2Pet</h3>
+            <p>O SuperPet reescrito do zero: mais leve, com cadastro aberto para qualquer loja.</p>
+            <ul>
+              <li>Cadastro da loja pelo próprio site, com perfis e permissões</li>
+              <li>Produtos com lote, validade e venda a granel</li>
+              <li>Compras com importação do XML da NF-e e inventário</li>
+              <li>PDV com caixa por terminal e várias formas de pagamento</li>
+            </ul>
+            <p class="obs">Em breve em pet.rc2sistemas.cloud.</p>
+          </div>
         </div>
-        <div class="card">
-          <div class="ic">🚲</div>
-          <span class="tag">Bicicletarias</span>
-          <h3>CicleSystem</h3>
-          <p>Feito para oficina: da entrada da bike ao fechamento da ordem de serviço.</p>
-          <ul>
-            <li>Ordens de serviço com peças e mão de obra</li>
-            <li>Controle de peças, fornecedores e garantia</li>
-            <li>Vendas, caixa e contas a pagar e receber</li>
-          </ul>
+      </div>
+
+      <div class="grupo">
+        <h3 class="grupo-tit"><span>💰</span> Finanças pessoais</h3>
+        <div class="grid">
+          <div class="card">
+            <div class="card-topo"><div class="ic">📒</div><span class="status ok">Em operação</span></div>
+            <span class="tag">Pessoas e famílias · acesso por convite</span>
+            <h3>Finanças</h3>
+            <p>Controle do dinheiro da casa, compartilhado com quem divide as contas com você.</p>
+            <ul>
+              <li>Contas bancárias, receitas, despesas e transferências</li>
+              <li>Cartões de crédito com faturas e compras parceladas</li>
+              <li>Contas fixas recorrentes e lembretes no celular</li>
+              <li>Importação de extrato (OFX/CSV) com conciliação</li>
+            </ul>
+            <a class="acesso" href="https://financas.rc2sistemas.cloud/login">
+              <span class="url">financas.rc2sistemas.cloud</span><span class="ir">Entrar →</span>
+            </a>
+          </div>
         </div>
-        <div class="card">
-          <div class="ic">🛒</div>
-          <span class="tag">Loja virtual</span>
-          <h3>Catálogo online</h3>
-          <p>Sua vitrine na internet ligada ao estoque do sistema, com pedido pelo WhatsApp.</p>
-          <ul>
-            <li>Produtos, preços e fotos sempre atualizados</li>
-            <li>Carrinho, endereço por CEP e formas de pagamento</li>
-            <li>Destaques da semana montados por você</li>
-          </ul>
+      </div>
+
+      <div class="grupo">
+        <h3 class="grupo-tit"><span>🧾</span> Contábil e fiscal</h3>
+        <div class="grid">
+          <div class="card">
+            <div class="card-topo"><div class="ic">🧮</div><span class="status gratis">Gratuito</span></div>
+            <span class="tag">Ferramenta pública · RC2 Contábil</span>
+            <h3>Calculadora do Simples Nacional</h3>
+            <p>Simule o DAS do mês a partir do CNPJ e do faturamento. Cálculo ilustrativo.</p>
+            <ul>
+              <li>Consulta do CNPJ e sugestão de anexo pela atividade</li>
+              <li>Fator R e repartição de cada tributo</li>
+              <li>Sem cadastro, nenhum dado armazenado</li>
+            </ul>
+            <a class="acesso" href="https://contabil.rc2sistemas.cloud/calculadora-simples/">
+              <span class="url">contabil.rc2sistemas.cloud</span><span class="ir">Abrir →</span>
+            </a>
+          </div>
+          <div class="card">
+            <div class="card-topo"><div class="ic">📊</div><span class="status ok">Em operação</span></div>
+            <span class="tag">Fiscal</span>
+            <h3>Comparador fiscal</h3>
+            <p>Confere o que a nota diz com o que a regra manda e aponta a diferença.</p>
+            <ul>
+              <li>Comparação de tributos por item</li>
+              <li>Relatórios para conversar com a contabilidade</li>
+            </ul>
+            <a class="acesso" href="https://fiscal.rc2sistemas.cloud/">
+              <span class="url">fiscal.rc2sistemas.cloud</span><span class="ir">Abrir →</span>
+            </a>
+          </div>
+          <div class="card">
+            <div class="card-topo"><div class="ic">🗂️</div><span class="status restrito">Acesso restrito</span></div>
+            <span class="tag">Escritórios de contabilidade</span>
+            <h3>Controle Contábil</h3>
+            <p>Gestão do escritório: clientes, obrigações, prazos e honorários num lugar só.</p>
+            <ul>
+              <li>Agenda de obrigações por cliente, com dias úteis e feriados</li>
+              <li>Tarefas com checklist e controle de tempo da equipe</li>
+              <li>Honorários, contas a receber e inadimplência</li>
+              <li>Cálculo de ICMS-ST e DIFAL a partir do XML da NF-e</li>
+            </ul>
+            <a class="acesso" href="https://controle.rc2sistemas.cloud/">
+              <span class="url">controle.rc2sistemas.cloud</span><span class="ir">Entrar →</span>
+            </a>
+          </div>
         </div>
-        <div class="card">
-          <div class="ic">📊</div>
-          <span class="tag">Fiscal</span>
-          <h3>Comparador fiscal</h3>
-          <p>Confere o que a nota diz com o que a regra manda e aponta a diferença.</p>
-          <ul>
-            <li>Comparação de tributos por item</li>
-            <li>Relatórios para conversar com a contabilidade</li>
-          </ul>
-        </div>
-        <div class="card">
-          <div class="ic">🎓</div>
-          <span class="tag">Escolas e centros educacionais</span>
-          <h3>Gestão escolar</h3>
-          <p>ERP para a secretaria: da matrícula ao fechamento financeiro do mês, num fluxo só.</p>
-          <ul>
-            <li>Alunos, responsáveis, turmas e funcionários</li>
-            <li>Ocorrências e comunicados para o app dos pais</li>
-            <li>Mensalidades, contratos e cobranças com baixa em lote</li>
-            <li>Relatórios e prestação de contas com o timbre da escola</li>
-          </ul>
-        </div>
-        <a class="card" href="https://contabil.rc2sistemas.cloud/calculadora-simples/">
-          <div class="ic">🧮</div>
-          <span class="tag">Ferramenta gratuita · RC2 Contábil</span>
-          <h3>Calculadora do Simples Nacional</h3>
-          <p>Simule o DAS do mês a partir do CNPJ e do faturamento. Cálculo ilustrativo.</p>
-          <ul>
-            <li>Consulta do CNPJ e sugestão de anexo pela atividade</li>
-            <li>Fator R e repartição de cada tributo</li>
-            <li>Sem cadastro, nenhum dado armazenado</li>
-          </ul>
-          <p class="card-link">Abrir a calculadora →</p>
-        </a>
       </div>
     </div>
   </section>
