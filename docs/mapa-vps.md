@@ -11,6 +11,7 @@ VPS Hostinger `srv1797736` — IP `187.127.43.130` — Ubuntu, Nginx 1.24, PM2.
 | `cicle` | CicleSystem (bicicletarias) | PM2 `ciclesystem`, porta 3000, banco PostgreSQL local (só 127.0.0.1), usuário `cicle` ✅ | `ciclesystem` | `ciclesystem` |
 | `cem` | CEM | PM2 `cem`, porta 3300, usuário `cem` ✅ | `cem` | `cem` |
 | `financas` | Finanças (SaaS de finanças pessoais) | PM2 `financas`, porta 3400, PostgreSQL local (banco `financas`, só 127.0.0.1), usuário `financas` ✅ | `Financeiro-Pessoal` (git na VPS: `/srv/git/financas.git`) | `financas` |
+| `pet` | RC2Pet (novo sistema da Super Pet / pet shops, SaaS multi-loja) | PM2 `rc2pet` (cluster, 1 instância), porta 3600, PostgreSQL local (banco `rc2pet`, só 127.0.0.1), usuário `rc2pet` ✅ | `RC2Pet` (git na VPS: `/srv/git/rc2pet.git`; GitHub privado RodrigoSeny/RC2Pet) | `rc2pet` |
 | `fiscal` | Comparador Fiscal | Estático (Nginx), /var/www/comparador-fiscal | — | `comparador-fiscal` |
 | `contabil` | Site RC2 Contábil + Calculadora do Simples | **Estático (Nginx)** | `rc2-contabil-site` | `rc2-contabil` |
 
@@ -21,7 +22,7 @@ VPS Hostinger `srv1797736` — IP `187.127.43.130` — Ubuntu, Nginx 1.24, PM2.
    e não expõem código de sistema.
 2. **Um subdomínio, um repositório, uma pasta, um processo** por sistema.
 3. **Firewall (ufw) ativo** desde 2026-09-30: entrada liberada só em 22 (SSH), 80 e 443.
-   Portas dos sistemas (3000, 3001, 3300, 3400) bloqueadas para fora; acesso só via Nginx com HTTPS.
+   Portas dos sistemas (3000, 3001, 3300, 3400, 3500, 3501, 3600) bloqueadas para fora; acesso só via Nginx com HTTPS.
 4. **Cada sistema com seu usuário Linux**, sem senha e sem login: `cem` ✅, `cicle` ✅,
    `superpet` ✅. O código fica com dono root (só leitura para o sistema);
    o usuário do sistema só escreve nas pastas de dados, uploads e logs.
@@ -37,6 +38,7 @@ VPS Hostinger `srv1797736` — IP `187.127.43.130` — Ubuntu, Nginx 1.24, PM2.
 | CicleSystem | `/root/backup-ciclesystem.sh` | 03:00 (crontab do root) |
 | CEM | `/var/www/cem/backup.sh` | 02:00 (crontab do root) |
 | Finanças | `/var/www/financas/deploy/backup.sh` (pg_dump → `/var/backups/financas`, 30 dias; restauração testada) | 03:15 (`/etc/cron.d/rc2-backups`) |
+| RC2Pet | `/var/www/rc2pet/deploy/backup.sh` (pg_dump → `/var/backups/rc2pet-db`, 30 dias) + cópia JSON do próprio sistema em `/var/backups/rc2pet` (14 dias) | 04:00 (`/etc/cron.d/rc2-backups`) |
 
 **Fora da VPS:** backup automático da Hostinger (hPanel → VPS → Backups), que copia
 o servidor inteiro — inclusive `/var/backups/superpet` com os 30 dias de backups
@@ -48,6 +50,7 @@ diários. Antes de mudanças arriscadas, tirar um **snapshot** manual no hPanel.
 |---|---|
 | SuperPet | `cd /var/www/superpet && bash update.sh` |
 | Finanças | (no PC) `git push vps main` → (na VPS) `bash /var/www/financas/deploy/update.sh` |
+| RC2Pet | (no PC) `git push vps main` → (na VPS) `bash /var/www/rc2pet/deploy/update.sh` |
 | Site RC2 Sistemas | `bash /var/www/rc2-sistemas-site/deploy/atualizar.sh` |
 | Site RC2 Contábil | `bash /var/www/rc2-contabil-site/deploy/atualizar.sh` |
 | Estatísticas (manual) | `/var/www/rc2-sistemas-site/deploy/estatisticas/gerar.sh` |
